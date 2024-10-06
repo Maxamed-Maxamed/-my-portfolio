@@ -1,19 +1,20 @@
 // src/components/Skills.js
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'Java', imgUrl: '/path-to-java-logo.png' },
-  { name: 'React', imgUrl: '/path-to-react-logo.png' },
-  { name: 'AWS', imgUrl: '/path-to-aws-logo.png' },
-  { name: 'Python', imgUrl: '/path-to-python-logo.png' },
-  { name: 'C++', imgUrl: '/path-to-cpp-logo.png' },
-  { name: 'Docker', imgUrl: '/path-to-docker-logo.png' },
-  { name: 'SQL', imgUrl: '/path-to-sql-logo.png' },
-  { name: 'Git', imgUrl: '/path-to-git-logo.png' },
-  { name: 'Linux', imgUrl: '/path-to-linux-logo.png' },
-  { name: 'JavaScript', imgUrl: '/path-to-js-logo.png' },
-  { name: 'TypeScript', imgUrl: '/path-to-ts-logo.png' },
-  {name: 'koltin', imgUrl: ''},
+  { name: 'Java', imgUrl: 'https://www.svgrepo.com/show/184143/java.svg' },
+  { name: 'React', imgUrl: 'https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg' },
+  { name: 'AWS', imgUrl: 'https://www.svgrepo.com/show/353443/aws.svg' },
+  { name: 'Python', imgUrl: 'https://www.svgrepo.com/show/376344/python.svg' },
+  { name: 'C++', imgUrl: 'https://download.logo.wine/logo/C%2B%2B/C%2B%2B-Logo.wine.png' },
+  { name: 'Docker', imgUrl: 'https://www.svgrepo.com/show/331370/docker.svg' },
+  { name: 'SQL', imgUrl: 'https://www.svgrepo.com/show/331760/sql-database-generic.svg' },
+  { name: 'Git', imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1024px-Git_icon.svg.png' },
+  { name: 'Linux', imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/1727px-Tux.svg.png' },
+  { name: 'JavaScript', imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png' },
+  { name: 'TypeScript', imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png' },
+  { name: 'Kotlin', imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kotlin_logo.svg/2560px-Kotlin_logo.svg.png' }, // Placeholder image
   // Add more skills with logo URLs
 ];
 
@@ -29,7 +30,7 @@ const Skills = () => {
         >
           Skills
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-gray-100 text-black">
           {skills.map((skill) => (
             <motion.div
               whileHover={{ scale: 1.1 }}
@@ -47,3 +48,4 @@ const Skills = () => {
 };
 
 export default Skills;
+
