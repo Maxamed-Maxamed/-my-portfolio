@@ -1,43 +1,57 @@
-// src/components/Hero.js
 import React from 'react';
 import { motion } from 'framer-motion';
+import profileImage from '../../assets/mine.jpeg'; // Import your profile image
 
-// Hero component that displays a hero section with a heading, subheading, and a call-to-action button
 const Hero = () => {
   return (
-    // Hero section container with a full-screen height, centered content, and a dark gray background
-    <section id="hero" className="h-screen flex flex-col justify-center items-center bg-gray-900 text-white text-center">
-      {/* Animated heading that fades in and moves up from the bottom */}
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }} // Initial state: invisible and 50px above its final position
-        animate={{ opacity: 1, y: 0 }} // Final state: visible and at its final position
-        transition={{ duration: 1 }} // Animation duration: 1 second
-        className="text-5xl md:text-6xl font-bold"
-      >
-        Maxamed Maxamed
-      </motion.h1>
-      {/* Animated subheading that fades in and moves up from the bottom */}
-      <motion.p
-        initial={{ opacity: 0, y: 50 }} // Initial state: invisible and 50px below its final position
-        animate={{ opacity: 1, y: 0 }} // Final state: visible and at its final position
-        transition={{ duration: 1, delay: 0.5 }} // Animation duration: 1 second, delayed by 0.5 seconds
-        className="mt-4 text-lg md:text-xl"
-      >
-        Recent Computer Science Graduate & Full-Stack Developer
-      </motion.p>
-      {/* Animated call-to-action button that fades in */}
-      <motion.a
-        href="#projects"
-        className="mt-6 px-6 py-3 bg-teal-500 text-white font-semibold rounded-md hover:bg-teal-600 transition"
-        initial={{ opacity: 0 }} // Initial state: invisible
-        animate={{ opacity: 1 }} // Final state: visible
-        transition={{ duration: 1, delay: 1 }} // Animation duration: 1 second, delayed by 1 second
-      >
-        View Projects
-      </motion.a>
+    <section id="hero" className="h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white p-12">
+      {/* Left Side Text */}
+      <div className="flex-1 max-w-lg text-center md:text-left space-y-8">
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="text-4xl md:text-5xl font-extrabold tracking-wide"
+        >
+          Welcome, I'm <span className="text-teal-400">Maxamed Maxamed</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="text-base md:text-lg font-light leading-loose"
+        >
+          A passionate Computer Science graduate and skilled Full-Stack Developer with a focus on creating efficient and scalable web applications.
+        </motion.p>
+        <motion.a
+          href="#projects"
+          className="inline-block px-10 py-3 bg-teal-500 text-white font-medium rounded-md shadow-md hover:bg-teal-600 transition transform hover:scale-110"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        >
+          Explore My Work
+        </motion.a>
+      </div>
+
+      {/* Right Side Image */}
+      <div className="flex-1 mt-12 md:mt-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] mx-auto rounded-full shadow-2xl border-4 border-teal-500 overflow-hidden"
+        >
+          <img
+            src={profileImage}
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900 to-gray-800 opacity-30"></div>
+        </motion.div>
+      </div>
     </section>
   );
 };
 
-// Export the Hero component as the default export
 export default Hero;
