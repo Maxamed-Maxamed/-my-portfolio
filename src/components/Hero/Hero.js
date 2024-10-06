@@ -1,10 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profileImage from '../../assets/mine.jpeg'; // Import your profile image
+import profileImage from '../../assets/mine.jpeg';
 
 const Hero = () => {
   return (
-    <section id="hero" className="h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white p-12">
+    <section
+      id="hero"
+      className="h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white p-12 mt-16" // Ensure margin matches navbar height
+      aria-label="Hero section"
+    >
       {/* Left Side Text */}
       <div className="flex-1 max-w-lg text-center md:text-left space-y-8">
         <motion.h1
@@ -21,7 +25,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-base md:text-lg font-light leading-loose"
         >
-          A passionate Computer Science graduate and skilled Full-Stack Developer with a focus on creating efficient and scalable web applications.
+          A passionate Computer Science graduate and skilled Full-Stack Developer focused on creating efficient and scalable web applications.
         </motion.p>
         <motion.a
           href="#projects"
@@ -29,6 +33,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
+          aria-label="Explore my work"
         >
           Explore My Work
         </motion.a>
@@ -44,8 +49,9 @@ const Hero = () => {
         >
           <img
             src={profileImage}
-            alt="Profile"
+            alt="Profile of Maxamed Maxamed"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900 to-gray-800 opacity-30"></div>
         </motion.div>
